@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1 data-testid="slackUserName">Praise Adegoke</h1>
+        <img src="IMG_20190630_134437~3.jpg" alt="Praise Adegoke" data-testid="slackDisplayImage" height="150px" width="200px">
+        <p data-testid="currentDayOfTheWeek" id="day-of-week"></p>
+        <p data-testid="currentUTCTime" id="utc-time"></p>
+        <p data-testid="myTrack">Frontend</p>
+        <a href="https://github.com/your-username/your-repo" data-testid="githubURL">GitHub Repository</a>
+    </div>
+</body>
+
+
+<script>
+    const currentUTCTime = new Date().getTime();
+    const currentDate = new Date();
+    const currentDayOfWeek = currentDate.toLocaleDateString(undefined,  {weekday: 'long'});
+
+    document.getElementById("day-of-week").textContent = currentDayOfWeek;
+    document.getElementById("utc-time").textContent = currentUTCTime;
+</script>
+</html>
